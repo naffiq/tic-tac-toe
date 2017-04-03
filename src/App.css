@@ -3,13 +3,17 @@
   margin-top: 3rem;
 }
 
-.button-row {
+.App h1 {
+  font-size: 4rem;
+}
+
+.game-field .button-row {
   display: flex;
   width: 450px;
   margin: 0 auto;
 }
 
-.button-row button.field-button {
+.game-field .button-row button.field-button {
   flex: 1 1 0;
   height: 150px;
   background: transparent;
@@ -21,10 +25,6 @@
   font-size: 3rem;
 }
 
-.button-row button.empty {
-  cursor: pointer;
-}
-
 .fa-circle-o {
   color: red;
 }
@@ -33,16 +33,20 @@
   color: blue;
 }
 
-.button-row:first-of-type button.field-button {
+.game-field .button-row button.empty {
+  cursor: pointer;
+}
+
+.game-field .button-row:first-of-type button.field-button {
   border-top: none;
 }
-.button-row:last-of-type button.field-button {
+.game-field .button-row:last-of-type button.field-button {
   border-bottom: none;
 }
-.button-row button.field-button:first-of-type {
+.game-field .button-row button.field-button:first-of-type {
   border-left: none;
 }
-.button-row button.field-button:last-of-type {
+.game-field .button-row button.field-button:last-of-type {
   border-right: none;
 }
 

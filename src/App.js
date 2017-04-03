@@ -3,22 +3,24 @@ import './App.css';
 import Button from './Button';
 import GameStatus from './GameStatus';
 import GameRules from './GameRules';
+import PlayerIcon from './PlayerIcon';
 
 class App extends Component {
-  initState = {
-    field: [
-      [0, 0, 0],
-      [0, 0, 0],
-      [0, 0, 0]
-    ],
-    playerMove: 1
-  };
-
   constructor() {
     super();
 
-    this.state = this.initState;
-    this.handleReplay.bind(this);
+    this.state = App.getEmptyBoard();
+  }
+
+  static getEmptyBoard() {
+    return {
+      field: [
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0]
+      ],
+      playerMove: 1
+    };
   }
 
   static invertPlayerMove(playerMove) {
@@ -38,9 +40,9 @@ class App extends Component {
     }
   };
 
-  handleReplay() {
-    this.setState(this.initState);
-  }
+  handleReplay = () => {
+    this.setState(App.getEmptyBoard());
+  };
 
   render() {
     let {field, playerMove} = this.state;
@@ -65,8 +67,17 @@ class App extends Component {
 
     return (
       <div className="App">
-        { renderButtons() }
+        <h1>
+          <PlayerIcon player={1}/> TicTacToe <PlayerIcon player={-1}/>
+        </h1>
+        <div className="game-field">
+          { renderButtons() }
+        </div>
         <GameStatus field={field} playerMove={playerMove} onReplay={this.handleReplay} />
+
+        <a href="https://github.com/naffiq/tic-tac-toe" target="_blank" rel="nofollow">
+          <i className="fa fa-github"/> Check it out on GitHub
+        </a>
       </div>
     );
   }
