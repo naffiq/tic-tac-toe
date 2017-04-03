@@ -9,7 +9,7 @@
   margin: 0 auto;
 }
 
-.button-row button {
+.button-row button.field-button {
   flex: 1 1 0;
   height: 150px;
   background: transparent;
@@ -25,24 +25,24 @@
   cursor: pointer;
 }
 
-.button-row button.circle {
+.fa-circle-o {
   color: red;
 }
 
-.button-row button.cross {
+.fa-close {
   color: blue;
 }
 
-.button-row:first-of-type button {
+.button-row:first-of-type button.field-button {
   border-top: none;
 }
-.button-row:last-of-type button {
+.button-row:last-of-type button.field-button {
   border-bottom: none;
 }
-.button-row button:first-of-type {
+.button-row button.field-button:first-of-type {
   border-left: none;
 }
-.button-row button:last-of-type {
+.button-row button.field-button:last-of-type {
   border-right: none;
 }
 

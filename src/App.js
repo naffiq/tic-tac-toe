@@ -1,20 +1,24 @@
 import React, {Component} from 'react';
 import './App.css';
 import Button from './Button';
+import GameStatus from './GameStatus';
 import GameRules from './GameRules';
 
 class App extends Component {
+  initState = {
+    field: [
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0]
+    ],
+    playerMove: 1
+  };
+
   constructor() {
     super();
 
-    this.state = {
-      field: [
-        [0, 0, 0],
-        [0, 0, 0],
-        [0, 0, 0]
-      ],
-      playerMove: 1
-    };
+    this.state = this.initState;
+    this.handleReplay.bind(this);
   }
 
   static invertPlayerMove(playerMove) {
@@ -23,7 +27,8 @@ class App extends Component {
 
   handleButtonClick = (row, column) => {
     let {field, playerMove} = this.state;
-    if (field[row][column] === 0) {
+
+    if (!GameRules.isDraw(field) && field[row][column] === 0) {
       field[row][column] = playerMove;
 
       this.setState({
@@ -33,9 +38,12 @@ class App extends Component {
     }
   };
 
+  handleReplay() {
+    this.setState(this.initState);
+  }
 
   render() {
-    let {field} = this.state;
+    let {field, playerMove} = this.state;
 
     let renderButtons = () => {
       return field.map((rowButtonStates, row) => {
@@ -58,6 +66,7 @@ class App extends Component {
     return (
       <div className="App">
         { renderButtons() }
+        <GameStatus field={field} playerMove={playerMove} onReplay={this.handleReplay} />
       </div>
     );
   }
