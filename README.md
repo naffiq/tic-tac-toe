@@ -1,4 +1,5 @@
 # ReactJS tic-tac-toe game
+[![Build Status](https://travis-ci.org/naffiq/tic-tac-toe.svg?branch=master)](https://travis-ci.org/naffiq/tic-tac-toe)
 
 [DEMO](https://naffiq-tic-tac-toe.herokuapp.com/)
 
