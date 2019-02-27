@@ -23,6 +23,7 @@
   -moz-box-shadow: none;
   box-shadow: none;
   font-size: 3rem;
+  margin: 0;
 }
 
 .fa-circle-o {
