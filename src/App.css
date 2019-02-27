@@ -1,15 +1,26 @@
+@media (min-width: 768px) {
+  .App {
+    text-align: center;
+    margin-top: 3rem;
+  }
+  .App h1 {
+    font-size: 4rem;
+  }
+}
+
 .App {
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 .App h1 {
-  font-size: 4rem;
+  font-size: 2rem;
 }
 
 .game-field .button-row {
   display: flex;
   width: 450px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -68,6 +79,10 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
